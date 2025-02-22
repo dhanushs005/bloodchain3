@@ -1,0 +1,111 @@
+{% extends 'Main/base.html' %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">Donors</h2>
+
+    <!-- Search Form -->
+    <form method="GET" action="" class="mb-4">
+        <div class="flex flex-wrap gap-4">
+            <div>
+                <label for="blood_group" class="block text-sm font-medium text-gray-700">Blood Group</label>
+                <input
+                    type="text"
+                    id="blood_group"
+                    name="blood_group"
+                    class="border border-gray-300 rounded-md p-2 w-full"
+                    placeholder="Enter blood group (e.g., A+)"
+                    value="{{ request.GET.blood_group|default_if_none:'' }}"
+                >
+            </div>
+            <div>
+                <label for="district" class="block text-sm font-medium text-gray-700">District</label>
+                <input
+                    type="text"
+                    id="district"
+                    name="district"
+                    class="border border-gray-300 rounded-md p-2 w-full"
+                    placeholder="Enter district"
+                    value="{{ request.GET.district|default_if_none:'' }}"
+                >
+            </div>
+            <div class="flex items-end">
+                <button
+                    type="submit"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                >
+                    Search
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Donors List -->
+    <h3 class="text-lg font-semibold mb-2">Donors List</h3>
+    {% if donors %}
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200 rounded-md">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Name</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Mobile</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Blood Group</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Gender</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">District</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Last Donated Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for donor in donors %}
+                        <tr class="border-t border-gray-200">
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ donor.name }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ donor.mobile }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ donor.blood_group }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ donor.gender }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ donor.district }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ donor.last_donated_date }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-gray-600">No donor information available.</p>
+    {% endif %}
+
+    <!-- Emergency Cases List -->
+    <h3 class="text-lg font-semibold mt-6 mb-2">Emergency Cases</h3>
+    {% if emergency %}
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200 rounded-md">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Patient Name</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Mobile</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Blood Group Needed</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Gender</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Units Needed</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Hospital</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">District</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Urgency Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for case in emergency %}
+                        <tr class="border-t border-gray-200">
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ case.pname }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ case.pmobile }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ case.bg_needed }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ case.pgender }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ case.units_needed }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ case.hospital_name }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ case.pdists }}</td>
+                            <td class="px-4 py-2 text-sm text-gray-700">{{ case.urgency_level }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-gray-600">No emergency cases available.</p>
+    {% endif %}
+{% endblock %}
