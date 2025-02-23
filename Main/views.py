@@ -365,7 +365,14 @@ def login_user(request):
 @login_required  # Optional: Restrict access to logged-in users
 def download_app(request):
     return render(request, 'Main/download.html')
-    
+
+def download_apk(request):
+    apk_path = os.path.join(settings.STATICFILES_DIRS[0], 'apps', 'BCview.apk')
+    response = FileResponse(open(apk_path, 'rb'), as_attachment=True, filename='BCview.apk')
+    response['Content-Type'] = 'application/vnd.android.package-archive'
+    response['Content-Disposition'] = 'attachment; filename="BCview.apk"'
+    return response
+
 # Logout view
 def logout(request):
     response = HttpResponse("Logged out successfully.")
