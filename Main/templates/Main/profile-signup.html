@@ -25,6 +25,7 @@
 		<a href="{% url 'login' %}">Already a user ? Login</a>
 		</center>
 </div>
+<center>
 {% if messages %}
 {% for message in messages %}
     <div class="alert {{ message.tags }}">
@@ -32,4 +33,5 @@
     </div>
 {% endfor %}
 {% endif %}
-{% endblock %}
+</center>
+	{% endblock %}
