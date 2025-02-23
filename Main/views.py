@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.core.exceptions import ValidationError
 from .forms import UserForm, EmergencyForm, ReportForm, LoginForm, SignupForm
 from pymongo import MongoClient, errors
+from django.conf import settings
 import logging
 
 # Configure logging
