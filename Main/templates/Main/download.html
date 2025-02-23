@@ -3,50 +3,54 @@
 
 {% block content %}
     <!-- Download Section -->
-    <div class="download-section relative w-full h-[70vh] bg-gradient-to-b from-red-600 via-red-800 to-red-900 overflow-hidden">
+    <div class="download-section relative w-full h-[70vh] sm:h-[60vh] md:h-[70vh] bg-gradient-to-b from-red-600 via-red-800 to-red-900 overflow-hidden">
         <div class="absolute inset-0 bg-pattern-droplets opacity-20"></div>
         <div class="absolute inset-0 bg-noise opacity-5"></div>
-        <div class="container mx-auto h-full flex flex-col items-center justify-center text-center z-10">
-            <h1 class="text-white text-5xl font-extrabold tracking-wide shadow-lg animate-pulse-slow mb-6">
+        <div class="container mx-auto h-full flex flex-col items-center justify-center text-center z-10 px-4 sm:px-6">
+            <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide shadow-lg animate-pulse-slow mb-4 sm:mb-6">
                 Download BC View App
             </h1>
-            <p class="text-white text-xl font-medium max-w-2xl mx-auto leading-relaxed animate-fade-in">
+            <p class="text-white text-base sm:text-lg md:text-xl font-medium max-w-md sm:max-w-lg md:max-w-2xl mx-auto leading-relaxed animate-fade-in">
                 Explore blood donors and emergency cases effortlessly with the Blood Chain Companion App. Access donor lists and urgent needs anytime, anywhere—no login required!
             </p>
-<a href="{% url 'apk'%}" 
-   download="BCview.apk" 
-   class="download-button bg-red-600 text-white px-4 py-2 rounded-full text-base font-semibold hover:bg-red-700 hover:shadow-lg transform hover:scale-105 transition-all duration-300 mt-8">
-    Download APK Now
-</a>
+            <a href="{% url 'apk' %}" 
+               download="BCview.apk" 
+               class="download-button bg-red-600 text-white px-3 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full text-sm sm:text-base md:text-lg font-semibold hover:bg-red-700 hover:shadow-lg transform hover:scale-105 transition-all duration-300 mt-6 sm:mt-8">
+                Download APK Now
+            </a>
         </div>
     </div>
 
     <!-- App Features Section -->
-    <div class="features-section py-16 bg-gradient-to-b from-white to-red-50">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-extrabold text-red-700 mb-8 animate-slide-up">App Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-100">
-                    <h3 class="text-2xl font-bold text-red-600 mb-4">View Donors</h3>
-                    <p class="text-gray-700">Instantly access a comprehensive list of blood donors without logging in.</p>
+    <div class="features-section py-8 sm:py-12 md:py-16 bg-gradient-to-b from-white to-red-50">
+        <div class="container mx-auto text-center px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-red-700 mb-6 sm:mb-8 animate-slide-up">
+                App Features
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <div class="feature-card bg-white p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-100">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-3 sm:mb-4">View Donors</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Instantly access a comprehensive list of blood donors without logging in.</p>
                 </div>
-                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-200">
-                    <h3 class="text-2xl font-bold text-red-600 mb-4">Emergency Cases</h3>
-                    <p class="text-gray-700">Check urgent blood needs and emergency cases in real-time, no login required.</p>
+                <div class="feature-card bg-white p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-200">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-3 sm:mb-4">Emergency Cases</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Check urgent blood needs and emergency cases in real-time, no login required.</p>
                 </div>
-                <div class="feature-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-300">
-                    <h3 class="text-2xl font-bold text-red-600 mb-4">On-the-Go Access</h3>
-                    <p class="text-gray-700">Stay connected to vital blood donation information anytime, anywhere.</p>
+                <div class="feature-card bg-white p-4 sm:p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-300">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-3 sm:mb-4">On-the-Go Access</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Stay connected to vital blood donation information anytime, anywhere.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- System Requirements Section -->
-    <div class="requirements-section py-12 bg-red-100">
-        <div class="container mx-auto text-center">
-            <h3 class="text-3xl font-bold text-red-800 mb-6 animate-bounce-in">System Requirements</h3>
-            <ul class="list-disc list-inside text-lg text-gray-800 max-w-2xl mx-auto animate-slide-up">
+    <div class="requirements-section py-8 sm:py-10 md:py-12 bg-red-100">
+        <div class="container mx-auto text-center px-4 sm:px-6">
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-red-800 mb-4 sm:mb-6 animate-bounce-in">
+                System Requirements
+            </h3>
+            <ul class="list-disc list-inside text-sm sm:text-base md:text-lg text-gray-800 max-w-md sm:max-w-lg md:max-w-2xl mx-auto animate-slide-up">
                 <li>Android 8.0 (Oreo) or higher</li>
                 <li>Minimum 2GB RAM</li>
                 <li>50MB free storage space</li>
@@ -126,84 +130,30 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .download-section {
-                height: 50vh;
-            }
-            .download-section h1 {
-                font-size: 3.5rem;
-            }
-            .download-section p {
-                font-size: 1.2rem;
-                max-width: 80%;
-            }
-            .download-button {
-                px-8 py-3 text-xl;
-            }
-            .features-section {
-                py-12;
-            }
-            .features-section h2 {
-                font-size: 2.5rem;
-            }
-            .feature-card {
-                p-4;
-            }
-            .feature-card h3 {
-                font-size: 1.5rem;
-            }
-            .feature-card p {
-                font-size: 0.9rem;
-            }
-            .requirements-section {
-                py-10;
-            }
-            .requirements-section h3 {
-                font-size: 2rem;
-            }
-            .requirements-section ul {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
+        /* Remove Invalid Tailwind Syntax from Media Queries */
+        @media (max-width: 640px) { /* Tailwind's 'sm' breakpoint */
             .download-section {
                 height: 40vh;
             }
             .download-section h1 {
-                font-size: 2.5rem;
+                font-size: 2rem; /* 32px */
             }
             .download-section p {
-                font-size: 1rem;
-                max-width: 75%;
+                font-size: 1rem; /* 16px */
+                max-width: 90%;
             }
-            .download-button {
-                px-6 py-2 text-lg;
+        }
+
+        @media (max-width: 768px) { /* Tailwind's 'md' breakpoint */
+            .download-section {
+                height: 50vh;
             }
-            .features-section {
-                py-8;
+            .download-section h1 {
+                font-size: 2.5rem; /* 40px */
             }
-            .features-section h2 {
-                font-size: 2rem;
-            }
-            .feature-card {
-                p-3;
-            }
-            .feature-card h3 {
-                font-size: 1.2rem;
-            }
-            .feature-card p {
-                font-size: 0.8rem;
-            }
-            .requirements-section {
-                py-8;
-            }
-            .requirements-section h3 {
-                font-size: 1.5rem;
-            }
-            .requirements-section ul {
-                font-size: 0.9rem;
+            .download-section p {
+                font-size: 1.125rem; /* 18px */
+                max-width: 80%;
             }
         }
     </style>
