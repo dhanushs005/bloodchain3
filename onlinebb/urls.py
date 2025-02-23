@@ -35,4 +35,5 @@ urlpatterns = [
     path('update-report', views.updateReport, name='updateReport'),
     path('update-emergency', views.emergency_details, name='updateEmergency'),
     path('download', views.download_app, name='download'),
+    path('apk',views.download_apk,name='apk'),
 ]
